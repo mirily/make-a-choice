@@ -8,6 +8,7 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'board.html',
 })
 export class BoardPage {
+  items = []
 
   constructor(public alertCtrl: AlertController) {
   }
@@ -17,7 +18,6 @@ export class BoardPage {
   }
 
   addBoard() {
-    console.log('test')
     const prompt = this.alertCtrl.create({
       title: 'Идея',
       message: "Введите идею для размышления",
@@ -31,13 +31,18 @@ export class BoardPage {
         {
           text: 'Закрыть',
           handler: data => {
-            console.log('Cancel clicked');
+            if (data && data.title) {
+              console.log(data)
+            }
           }
         },
         {
           text: 'Сохранить',
           handler: data => {
-            console.log('Saved clicked');
+            if (data && data.title) {
+              this.items.push(data.title)
+              console.log(this.items)
+            }            
           }
         }
       ]

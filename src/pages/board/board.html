@@ -1,4 +1,26 @@
 <ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item>
+        <h2>{{item}}</h2>
+        <p clear item-end>19/12</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary" class="help-but">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button color="secondary" class="help-but">
+          <ion-icon name="done-all"></ion-icon>
+        </button>
+        <button ion-button color="danger" class="help-but">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+
   <button ion-fab class="bottom-fix" (click)="addBoard()">
     <ion-icon name="add"></ion-icon>
   </button>
