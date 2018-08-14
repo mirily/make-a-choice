@@ -14,3 +14,12 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.bottom-fix {
+  position: fixed;
+  bottom: 72px;
+  right: 16px;
+}
+
+.tabs-md-primary .tab-button:hover:not(.disable-hover), .tabs-md-primary .tab-button[aria-selected=true], .tabs-md-primary .tab-button[aria-selected=true] .tab-button-icon {
+  opacity: 1;
+}

@@ -10,6 +10,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BoardPageModule } from '../pages/board/board.module';
 import { TaskPageModule } from '../pages/task/task.module';
 import { StatisticsPageModule } from '../pages/statistics/statistics.module';
+import { BoardProvider } from '../providers/board/board';
+import { SqliteProvider } from '../providers/sqlite/sqlite';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { StatisticsPageModule } from '../pages/statistics/statistics.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BoardProvider,
+    SqliteProvider
   ]
 })
 export class AppModule {}
